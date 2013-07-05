@@ -15,7 +15,7 @@ describe Sorter do
     it { should eq([]) }
 
     it do
-      sorter.set_values
+      sorter.set_values([])
       should eq([])
     end
 
