@@ -1,14 +1,8 @@
 class Sorter
+  attr_accessor :values
+
   def initialize
     @values = []
-  end
-
-  def get_values
-    @values
-  end
-
-  def set_values(values)
-    @values = values.clone
   end
 
   def sort
