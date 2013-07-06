@@ -30,41 +30,41 @@ describe Sorter do
     end
   end
 
-  describe '#sort' do
+  describe '#sort!' do
     subject { sorter.values }
 
     it do
-      sorter.sort
+      sorter.sort!
       should eq([])
     end
 
     it do
       sorter.values = [1]
-      sorter.sort
+      sorter.sort!
       should eq([1])
     end
 
     it do
       sorter.values = [5, 4, 3, 2, 1]
-      sorter.sort
+      sorter.sort!
       should eq([1, 2, 3, 4, 5])
     end
 
     it do
       sorter.values = [-1, -2, -3, -4, -5]
-      sorter.sort
+      sorter.sort!
       should eq([-5, -4, -3, -2, -1])
     end
 
     it do
       sorter.values = [1, 2, 3, 4, 5]
-      sorter.sort
+      sorter.sort!
       should eq([1, 2, 3, 4, 5])
     end
 
     it do
       sorter.values = [5, 5, 4, 4, 4, 3, 2, 1]
-      sorter.sort
+      sorter.sort!
       should eq([1, 2, 3, 4, 4, 4, 5, 5])
     end
 
@@ -73,7 +73,7 @@ describe Sorter do
         random_values = []
         100.times { random_values << ((rand * 100).to_i - 50) }
         sorter.values = random_values.dup
-        sorter.sort
+        sorter.sort!
         should eq(random_values.sort)
       end
     end

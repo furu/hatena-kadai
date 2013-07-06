@@ -5,7 +5,7 @@ class Sorter
     @values = []
   end
 
-  def sort
+  def sort!
     sorted = []
     until @values.empty?
       sorted << @values.min
